@@ -27,7 +27,6 @@ class ArmEnv(object):
         self.center_coord = np.array(self.viewer_xy)/2
 
     def step(self, action):
-        # action = (node1 angular v, node2 angular v)
         action = np.clip(action, *self.action_bound)
         self.arm_info[:, 1] += action * self.dt
         self.arm_info[:, 1] %= np.pi * 2
@@ -117,11 +116,12 @@ class Viewer(pyglet.window.Window):
         self.center_coord = np.array((min(width, height)/2, ) * 2)
         self.batch = pyglet.graphics.Batch()
 
-        arm1_box, arm2_box, point_box = [0]*8, [0]*8, [0]*8
+        arm1_box, arm2_box, point_box, ball_box = [0]*8, [0]*8, [0]*8, [0]*16
         c1, c2, c3 = (249, 86, 86)*4, (86, 109, 249)*4, (249, 39, 65)*4
         self.point = self.batch.add(4, pyglet.gl.GL_QUADS, None, ('v2f', point_box), ('c3B', c2))
         self.arm1 = self.batch.add(4, pyglet.gl.GL_QUADS, None, ('v2f', arm1_box), ('c3B', c1))
         self.arm2 = self.batch.add(4, pyglet.gl.GL_QUADS, None, ('v2f', arm2_box), ('c3B', c1))
+        self.ball = self.batch.add(8, pyglet.gl.GL_QUADS, None, ('v2f', ball_box), ('c3B', c3))
 
     def render(self):
         pyglet.clock.tick()
