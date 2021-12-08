@@ -1,0 +1,40 @@
+cd /home/hantang/Desktop/PAIR_LAB/benchmark/robosuite-benchmark
+conda env create -f environments/rb_bench_linux_env.yml
+conda activate rb_bench
+pip install -r requirements.txt
+
+
+cd /home/hantang/Desktop/PAIR_LAB/benchmark/robosuite-benchmark
+export PYTHONPATH=.:$PYTHONPATH
+
+python scripts/train.py --variant /home/hantang/Desktop/PAIR_LAB/benchmark/robosuite-benchmark/runs/Lift-Panda-JOINT-VELOCITY-SEED59/Lift_Panda_JOINT_VELOCITY_SEED59_2020_09_13_00_26_56_0000--s-0/variant.json
+
+test variant:
+/home/hantang/Desktop/PAIR_LAB/benchmark/robosuite-benchmark/runs/Lift-Panda-JOINT-VELOCITY-SEED17/Lift_Panda_JOINT_VELOCITY_SEED17_2020_09_13_00_26_56_0000--s-0
+
+python scripts/train.py --variant hunter_test/variant.json
+
+
+
+
+Problem:
+https://github.com/ARISE-Initiative/robosuite/issues/193
+conda install numba
+python -m pip install numpy==1.20.1
+
+
+Robosuite asset:
+/home/hantang/anaconda3/envs/rb_bench/lib/python3.7/site-packages/robosuite
+/models/assets
+
+
+
+
+Env location:
+/robosuite/robosuite/environments/manipulation
+
+
+
+
+
+
