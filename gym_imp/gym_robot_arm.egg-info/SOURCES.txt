@@ -1,6 +1,14 @@
+main.py
 setup.py
+train.py
+gym_robot_arm/__init__.py
 gym_robot_arm.egg-info/PKG-INFO
 gym_robot_arm.egg-info/SOURCES.txt
 gym_robot_arm.egg-info/dependency_links.txt
 gym_robot_arm.egg-info/requires.txt
 gym_robot_arm.egg-info/top_level.txt
+gym_robot_arm/__pycache__/__init__.cpython-37.pyc
+gym_robot_arm/envs/__init__.py
+gym_robot_arm/envs/robot_arm_env.py
+gym_robot_arm/envs/__pycache__/__init__.cpython-37.pyc
+gym_robot_arm/envs/__pycache__/robot_arm_env.cpython-37.pyc
