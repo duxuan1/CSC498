@@ -100,6 +100,7 @@ class RobotArmEnvV0(gym.Env):
         base = origin.dot(origin_to_base)
         base_to_target = self.translate(self.target_pos[0], -self.target_pos[1], 0)
         target = base.dot(base_to_target)
+        pygame.draw.rect(self.screen, TARGET_COLOR, [int(target[0,3]), int(target[1,3]), 10, 100], 0)
         pygame.draw.circle(self.screen, TARGET_COLOR, (int(target[0,3]),int(target[1,3])), 12)
     
     def generate_random_angle(self):
@@ -219,6 +220,7 @@ class RobotArmEnvV1(RobotArmEnvV0):
         epsilon = 5
         if (distance_error > -epsilon and distance_error < epsilon):
             done = True
+            print(self.target_pos, tip_pos)
 
         observation = np.hstack((self.target_pos, self.theta))
         info = {
