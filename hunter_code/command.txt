@@ -42,7 +42,13 @@ tensorboard --logdir=C:\Users\lhtMi\Documents\lht\a_fourth_year\CSC498\proj\2d_e
 tensorboard --logdir=C:\Users\lhtMi\Documents\lht\a_fourth_year\CSC498\proj\2d_env\gym-robot-arm-master\gym-robot-arm-master\tmp\td3_robot_test_sample_size_models --port 8123
 
 Dense reward:
+TD3:
 tensorboard --logdir=C:\Users\lhtMi\Documents\lht\a_fourth_year\CSC498\proj\2d_env\gym-robot-arm-master_dense_reward\gym-robot-arm-master\td3_robot_test_sample_size --port 8123
+
+SAC:
+tensorboard --logdir=C:\Users\lhtMi\Documents\lht\a_fourth_year\CSC498\proj\2d_env\github\CSC498\hunter_code\gym-robot-arm-master_dense_reward\gym-robot-arm-master\sac_robot_test_sample_size --port 8123
+sav 100000 run:
+tensorboard --logdir=C:\Users\lhtMi\Documents\lht\a_fourth_year\CSC498\proj\2d_env\github\CSC498\hunter_code\gym-robot-arm-master_dense_reward\gym-robot-arm-master\sac_robot_test_sample_size --port 8123
 
 http://localhost:8123/
 
