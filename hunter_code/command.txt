@@ -1,0 +1,76 @@
+utm:
+cd ~
+. .bashrc
+cd /student/lihantan/csc498/benchmark/robosuite-benchmark
+conda env create -f environments/rb_bench_linux_env.yml
+conda activate rb_bench
+pip install -r requirements.txt
+conda remove -n rb_bench --all
+tmux
+
+# UTM v2:
+conda info --envs
+cd ~
+. .bashrc
+cd /student/lihantan/csc498
+export PATH=/opt/anaconda3/bin:$PATH
+conda-develop /opt/anaconda3/libpython3.8/site-packages
+
+
+
+
+Here:
+conda create -n 2d_robot python=3.9
+conda activate 2d_robot
+pip install gym
+pip install pygame
+conda install -c anaconda scipy
+pip install stable-baselines3[extra]
+
+git clone https://github.com/ekorudiawan/gym-robot-arm.git
+cd gym-robot-arm
+pip install -e .
+cd ..
+python train.py
+
+Addition:
+tensorboard --logdir=C:\tmp\sac_pendulum --port 8123
+tensorboard --logdir=C:\Users\lhtMi\Documents\lht\a_fourth_year\CSC498\proj\2d_env\gym-robot-arm-master\gym-robot-arm-master\tmp\sac_robot_arm_2d_test2_timesteps --port 8123
+############################important:#############################
+tensorboard --logdir=C:\Users\lhtMi\Documents\lht\a_fourth_year\CSC498\proj\2d_env\gym-robot-arm-master\gym-robot-arm-master\sac_robot_test_sample_size --port 8123
+####################################################################
+tensorboard --logdir=C:\Users\lhtMi\Documents\lht\a_fourth_year\CSC498\proj\2d_env\gym-robot-arm-master\gym-robot-arm-master\tmp\td3_robot_test_sample_size_models --port 8123
+
+Dense reward:
+tensorboard --logdir=C:\Users\lhtMi\Documents\lht\a_fourth_year\CSC498\proj\2d_env\gym-robot-arm-master_dense_reward\gym-robot-arm-master\td3_robot_test_sample_size --port 8123
+
+http://localhost:8123/
+
+conda remove --name 2d_robot --all
+
+Others:
+pip install pyglet
+
+Evaluation:
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 388      |
+|    ep_rew_mean     | -326     |
+| time/              |          |
+|    episodes        | 52       |
+|    fps             | 72       |
+|    time_elapsed    | 279      |
+|    total_timesteps | 20182    |
+| train/             |          |
+|    actor_loss      | 181      |
+|    critic_loss     | 5.14     |
+|    ent_coef        | 0.0931   |
+|    ent_coef_loss   | -1.88    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 20081    |
+---------------------------------
+
+了解如何用seed
+https://colab.research.google.com/github/araffin/rl-tutorial-jnrr19/blob/sb3/3_multiprocessing.ipynb
+
+

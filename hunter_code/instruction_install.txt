@@ -1,0 +1,16 @@
+conda create -n 2d_robot python=3.9
+conda activate 2d_robot
+pip install gym
+pip install pygame
+conda install -c anaconda scipy
+pip install stable-baselines3[extra]
+
+git clone https://github.com/ekorudiawan/gym-robot-arm.git
+cd gym-robot-arm
+#pip install -e .
+cd ..
+python train.py
+
+To show training:
+tensorboard --logdir=C:\tmp\sac_pendulum --port 8123
+http://localhost:8123/
