@@ -35,7 +35,7 @@ for i_episode in range(20):
             print("Episode finished after {} timesteps".format(t+1))
             break
 env.close()
-
+```
 
 **Rebuild Training**
 ```bash
